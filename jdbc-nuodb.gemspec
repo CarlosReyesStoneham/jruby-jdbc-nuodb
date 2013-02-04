@@ -21,8 +21,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = %w(lib)
 
   spec.add_development_dependency('rake', '~> 10.0.3')
-  spec.add_dependency(%q<activerecord-jdbc-adapter>, [">= 1.0.0"])
 
-  %w(rake simplecov).each { |gem| spec.add_development_dependency gem }
+  %w(rake).each { |gem| spec.add_development_dependency gem }
   %w(rspec rspec-core rspec-expectations rspec-mocks).each { |gem| spec.add_development_dependency gem, "~> 2.11.0" }
 end

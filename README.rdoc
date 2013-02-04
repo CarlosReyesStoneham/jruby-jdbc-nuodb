@@ -2,7 +2,7 @@
 
 {<img src="https://api.travis-ci.org/nuodb/jruby-jdbc-nuodb.png?branch=master" alt="Build Status" />}[http://travis-ci.org/nuodb/jruby-jdbc-nuodb]
 {<img src="https://gemnasium.com/nuodb/jruby-jdbc-nuodb.png?travis" alt="Dependency Status" />}[https://gemnasium.com/nuodb/jruby-jdbc-nuodb]
-{<img src="https://codeclimate.com/badge.png" alt="Code Climate" />}[https://codeclimate.com/github/nuodb/jruby-jdbc-nuodb]
+{<img src="https://codeclimate.com/github/nuodb/jruby-jdbc-nuodb.png" />}[https://codeclimate.com/github/nuodb/jruby-jdbc-nuodb]
 
 == DESCRIPTION
 
@@ -22,7 +22,7 @@ To make the driver accessible to JDBC and ActiveRecord code running in JRuby :
 
 To compile and test run this command:
 
-    rake clean build rdoc spec
+    rake clean build spec
 
 == INSTALLING THE GEM
 
@@ -36,6 +36,7 @@ Or from the source tree:
 
 Start up a minimal chorus as follows:
 
+    export NUODB_ROOT=/path/to/nuodb/install/directory
     java -jar ${NUODB_ROOT}/jar/nuoagent.jar --broker &
     ${NUODB_ROOT}/bin/nuodb --chorus test --password bar --dba-user dba --dba-password baz --verbose debug --archive /var/tmp/nuodb --initialize --force &
     ${NUODB_ROOT}/bin/nuodb --chorus test --password bar --dba-user dba --dba-password baz &
@@ -67,24 +68,14 @@ If you make a mistake, take it back quickly:
 
 Here are the commands used to publish:
 
-    gem push pkg/nuodb-1.0.0.gem
+    gem push pkg/jdbc-nuodb-1.0.0.gem
 
 == INSPECTING THE GEM
 
 It is often useful to inspect the contents of a Gem before distribution.
 To do this you dump the contents of a gem thus:
 
-    gem unpack pkg/nuodb-1.0.0.gem
-
-== INSPECTING THE EXPORTED SYMBOLS
-
-To inspec the symbols on Linux:
-
-    nm -gU ext/nuodb/nuodb.bundle
-
-To inspec the symbols on Mac:
-
-    otool -l ext/nuodb/nuodb.bundle
+    gem unpack pkg/jdbc-nuodb-1.0.0.gem
 
 == REFERENCES
 

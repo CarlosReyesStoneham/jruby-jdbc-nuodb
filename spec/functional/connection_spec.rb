@@ -1,12 +1,7 @@
-require 'rubygems'
-require 'java'
-require 'jdbc/nuodb'
+require 'spec_helper'
 
 describe Jdbc::NuoDB do
   before do
-    Jdbc::NuoDB.load_driver
-    java_import Jdbc::NuoDB.driver_name
-    java_import 'java.sql.DriverManager'
   end
 
   after do
@@ -15,28 +10,26 @@ describe Jdbc::NuoDB do
   context "creating a connection" do
 
     before(:each) do
-      begin
-        java_import java.lang.Class
-        java.lang.Class.forName(Jdbc::NuoDB.driver_name).newInstance
-        JavaLang::Class.forName(Jdbc::NuoDB.driver_name).newInstance
-      rescue JavaLang::ClassNotFoundException => e
-        puts "ClassNotFoundException: %s\n" % e
-      end
     end
 
     after(:each) do
     end
 
-    it "should raise an ArgumentError error when provided no configuration" do
+    it "should raise an SQLException when provided a database that cannot be connected to" do
       lambda {
-        Jdbc::NuoDB.load_driver
-        java_import Jdbc::NuoDB.driver_name
-        java_import 'java.sql.DriverManager'
+        url = "jdbc:com.nuodb://noexist:48004/test?schema=test"
+        java.sql.DriverManager.getConnection(url)
+      }.should raise_error(java.sql.SQLException)
+    end
 
-        java.lang.Class.forName(Jdbc::NuoDB.driver_name).newInstance
-        url = "jdbc:com.nuodb://localhost:48004:test?schema=test"
-        JavaSql::DriverManager.getConnection(url)
-      }.should raise_error(ArgumentError)
+    it "should not raise an SQLException when provided a database that can be connected to" do
+      lambda {
+        con_props = java.util.Properties.new
+        con_props.setProperty("user", "cloud")
+        con_props.setProperty("password", "user")
+        url = "jdbc:com.nuodb://localhost:48004/test?schema=test"
+        java.sql.DriverManager.getConnection(url, con_props)
+      }.should_not raise_error(java.sql.SQLException)
     end
   end
 end

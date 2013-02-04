@@ -7,12 +7,15 @@ $:.unshift(File.join(File.dirname(__FILE__), "..", "lib"))
 $:.unshift(File.expand_path("../lib", __FILE__))
 $:.unshift(File.dirname(__FILE__))
 
+require 'java'
 require 'jdbc/nuodb'
-#require 'simplecov'
-#
-#SimpleCov.start do
-#  add_group 'Libraries', 'lib'
-#end
-
 require 'support/config'
 require 'support/connection'
+
+#module JavaLang
+#  include_package 'java.lang'
+#end
+#
+#module JavaSQL
+#  include_package 'java.sql'
+#end
