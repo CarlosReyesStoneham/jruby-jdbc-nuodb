@@ -39,15 +39,15 @@ of the system installed ruby:
 
 To compile and test run this command:
 
-    rake clean build spec
+    jruby -S rake clean build spec
 
 == INSTALLING THE GEM
 
-    gem install jdbc-nuodb-1.0.0.gem
+    jruby -S gem install jdbc-nuodb-1.0.0.gem
 
 Or from the source tree:
 
-    gem install pkg/jdbc-nuodb-1.0.0.gem
+    jruby -S gem install pkg/jdbc-nuodb-1.0.0.gem
 
 == TESTING THE GEM
 
@@ -66,7 +66,7 @@ Create a user in the database:
 
 Run the tests:
 
-    rake spec
+    jruby -S rake spec
 
 == PUBLISHING THE GEM
 
