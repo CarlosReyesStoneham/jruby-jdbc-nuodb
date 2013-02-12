@@ -23,5 +23,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency('rake', '~> 10.0.3')
 
   %w(rake).each { |gem| spec.add_development_dependency gem }
-  %w(rspec rspec-core rspec-expectations rspec-mocks).each { |gem| spec.add_development_dependency gem, "~> 2.11.0" }
+  %w(rspec rspec-core rspec-expectations rspec-mocks).each { |gem| spec.add_development_dependency gem, '~> 2.11.0' }
 end
