@@ -28,12 +28,16 @@ which requires additional environment setup.
 
 For Mac, run the package installer available at:
 
-  http://jruby.org.s3.amazonaws.com/downloads/1.7.2/JRuby-1.7.2.dmg
+    http://jruby.org.s3.amazonaws.com/downloads/1.7.2/JRuby-1.7.2.dmg
 
 Then update your path so that the Gem from JRuby is first on your path ahead
 of the system installed ruby:
 
-  export PATH=/Library/Frameworks/JRuby.framework/Versions/Current/bin:$PATH
+    export PATH=/Library/Frameworks/JRuby.framework/Versions/Current/bin:$PATH
+
+If you fail to do this you will see the following error:
+
+    cannot load such file -- java
 
 == BUILDING THE GEM
 
