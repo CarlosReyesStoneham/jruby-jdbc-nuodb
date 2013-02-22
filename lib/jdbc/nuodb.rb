@@ -2,7 +2,7 @@ require 'java'
 
 module Jdbc
   module NuoDB
-    VERSION = '1.0.0'
+    VERSION = '1.0.1'
 
     def self.driver_jar
       "nuodb-jdbc-#{VERSION.split('.')[0..2].join('.')}.jar"
