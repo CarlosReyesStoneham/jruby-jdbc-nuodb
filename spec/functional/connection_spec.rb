@@ -19,7 +19,7 @@ describe Jdbc::NuoDB do
       lambda {
         url = 'jdbc:com.nuodb://noexist:48004/test?schema=test'
         java.sql.DriverManager.getConnection(url)
-      }.should raise_error(java.sql.SQLException)
+      }.should raise_error(Java::JavaSql::SQLException)
     end
 
     it 'should not raise an SQLException when provided a database that can be connected to' do
@@ -29,7 +29,7 @@ describe Jdbc::NuoDB do
         con_props.setProperty('password', 'user')
         url = 'jdbc:com.nuodb://localhost:48004/test?schema=test'
         java.sql.DriverManager.getConnection(url, con_props)
-      }.should_not raise_error(java.sql.SQLException)
+      }.should_not raise_error(Java::JavaSql::SQLException)
     end
   end
 end
