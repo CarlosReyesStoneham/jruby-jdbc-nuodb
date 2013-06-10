@@ -1,26 +1,29 @@
-= NuoDB/JRuby Interface
+# NuoDB/JRuby Interface
 
-{<img src="https://api.travis-ci.org/nuodb/jruby-jdbc-nuodb.png?branch=master" alt="Build Status" />}[http://travis-ci.org/nuodb/jruby-jdbc-nuodb]
-{<img src="https://gemnasium.com/nuodb/jruby-jdbc-nuodb.png?travis" alt="Dependency Status" />}[https://gemnasium.com/nuodb/jruby-jdbc-nuodb]
-{<img src="https://codeclimate.com/github/nuodb/jruby-jdbc-nuodb.png" />}[https://codeclimate.com/github/nuodb/jruby-jdbc-nuodb]
+[<img src="https://api.travis-ci.org/nuodb/jruby-jdbc-nuodb.png?branch=master"
+alt="Build Status" />](http://travis-ci.org/nuodb/jruby-jdbc-nuodb) [<img
+src="https://gemnasium.com/nuodb/jruby-jdbc-nuodb.png?travis" alt="Dependency
+Status" />](https://gemnasium.com/nuodb/jruby-jdbc-nuodb) [<img
+src="https://codeclimate.com/github/nuodb/jruby-jdbc-nuodb.png"
+/>](https://codeclimate.com/github/nuodb/jruby-jdbc-nuodb)
 
-== DESCRIPTION
+## DESCRIPTION
 
 This is the official JRuby Gem for NuoDB. It is implemented as a JDBC driver.
 
 It is a native Java driver that converts JDBC (Java Database Connectivity)
 calls into the network protocol used by the NuoDB database.
 
-== Usage
+## Usage
 
 To make the driver accessible to JDBC and ActiveRecord code running in JRuby :
 
     require 'jdbc/nuodb'
     Jdbc::NuoDB.load_driver
 
-== ENVIRONMENT SETUP
+## ENVIRONMENT SETUP
 
-=== MAC
+### MAC
 
 To set up JRuby on Mac, you may optimally install RVM and use that to install
 JRuby, or you may also install it from the package installer available online
@@ -39,13 +42,13 @@ If you fail to do this you will see the following error:
 
     cannot load such file -- java
 
-== BUILDING THE GEM
+## BUILDING THE GEM
 
 To compile and test run this command:
 
     jruby -S rake clean build spec
 
-== INSTALLING THE GEM
+## INSTALLING THE GEM
 
     jruby -S gem install jdbc-nuodb-1.0.1.gem
 
@@ -53,7 +56,7 @@ Or from the source tree:
 
     jruby -S gem install pkg/jdbc-nuodb-1.0.1.gem
 
-== TESTING THE GEM
+## TESTING THE GEM
 
 Start up a minimal chorus as follows:
 
@@ -72,11 +75,12 @@ Run the tests:
 
     jruby -S rake spec
 
-== PUBLISHING THE GEM
+## PUBLISHING THE GEM
 
-=== TAGGING
+### TAGGING
 
-Tag the product using tags per the SemVer specification; our tags have a v-prefix:
+Tag the product using tags per the SemVer specification; our tags have a
+v-prefix:
 
     git tag -a v1.0.1 -m "SemVer Version: v1.0.1"
 
@@ -85,18 +89,20 @@ If you make a mistake, take it back quickly:
     git tag -d v1.0.1
     git push origin :refs/tags/v1.0.1
 
-===PUBLISHING
+### PUBLISHING
 
 Here are the commands used to publish:
 
     gem push pkg/jdbc-nuodb-1.0.1.gem
 
-== INSPECTING THE GEM
+## INSPECTING THE GEM
 
-It is often useful to inspect the contents of a Gem before distribution.
-To do this you dump the contents of a gem thus:
+It is often useful to inspect the contents of a Gem before distribution. To do
+this you dump the contents of a gem thus:
 
     gem unpack pkg/jdbc-nuodb-1.0.1.gem
 
-== REFERENCES
+## REFERENCES
+
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/37e0a6f0f6a114235cd8699a9d861e56 "githalytics.com")](http://githalytics.com/nuodb/jruby-jdbc-nuodb)
 
