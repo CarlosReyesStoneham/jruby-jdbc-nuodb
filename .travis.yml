@@ -17,11 +17,11 @@ before_install:
   - sleep 2
 
 before_script:
-  - ${NUODB_ROOT}/bin/nuodb --chorus test --password bar --dba-user dba --dba-password baz --verbose debug --archive /var/tmp/nuodb --initialize --force &
+  - ${NUODB_ROOT}/bin/nuodb --chorus test --password bar --dba-user dba --dba-password goalie --verbose debug --archive /var/tmp/nuodb --initialize --force &
   - sleep 2
-  - ${NUODB_ROOT}/bin/nuodb --chorus test --password bar --dba-user dba --dba-password baz &
+  - ${NUODB_ROOT}/bin/nuodb --chorus test --password bar --dba-user dba --dba-password goalie &
   - sleep 2
-  - echo "create user cloud password 'user';" | ${NUODB_ROOT}/bin/nuosql test@localhost --user dba --password baz
+  - echo "create user dba password 'goalie';" | ${NUODB_ROOT}/bin/nuosql test@localhost --user dba --password goalie
 
 script:
   - NUODB_ROOT=/opt/nuodb bundle exec rake spec install

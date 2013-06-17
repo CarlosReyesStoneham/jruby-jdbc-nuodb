@@ -62,13 +62,13 @@ Start up a minimal chorus as follows:
 
     export NUODB_ROOT=/path/to/nuodb/install/directory
     java -jar ${NUODB_ROOT}/jar/nuoagent.jar --broker &
-    ${NUODB_ROOT}/bin/nuodb --chorus test --password bar --dba-user dba --dba-password baz --verbose debug --archive /var/tmp/nuodb --initialize --force &
-    ${NUODB_ROOT}/bin/nuodb --chorus test --password bar --dba-user dba --dba-password baz &
+    ${NUODB_ROOT}/bin/nuodb --chorus test --password bar --dba-user dba --dba-password goalie --verbose debug --archive /var/tmp/nuodb --initialize --force &
+    ${NUODB_ROOT}/bin/nuodb --chorus test --password bar --dba-user dba --dba-password goalie &
 
 Create a user in the database:
 
     ${NUODB_ROOT}/bin/nuosql test@localhost --user dba --password baz
-    > create user cloud password 'user';
+    > create user dba password 'goalie';
     > exit
 
 Run the tests:

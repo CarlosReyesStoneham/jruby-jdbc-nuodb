@@ -3,7 +3,7 @@ default_connection: development
 connections:
   development:
     database: 'test'
-    username: 'cloud'
-    password: 'user'
+    username: 'dba'
+    password: 'goalie'
     schema:   'test'
 

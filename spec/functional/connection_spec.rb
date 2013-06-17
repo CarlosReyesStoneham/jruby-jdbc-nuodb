@@ -25,8 +25,8 @@ describe Jdbc::NuoDB do
     it 'should not raise an SQLException when provided a database that can be connected to' do
       lambda {
         con_props = java.util.Properties.new
-        con_props.setProperty('user', 'cloud')
-        con_props.setProperty('password', 'user')
+        con_props.setProperty('user', 'dba')
+        con_props.setProperty('password', 'goalie')
         url = 'jdbc:com.nuodb://localhost:48004/test?schema=test'
         java.sql.DriverManager.getConnection(url, con_props)
       }.should_not raise_error(Java::JavaSql::SQLException)
